@@ -1,7 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: mmr
- * Date: 2018/02/19
- * Time: 0:21
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book List</title>
+    <!-- CSS と JavaScript -->
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <!-- ナビバーの 内容 -->
+    </nav>
+</div>
+@yield('content')
+</body>
+</html>
