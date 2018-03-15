@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Book List</title>
+    <title>Post List</title>
     <!-- CSS と JavaScript -->
 </head>
 <body>
