@@ -18,7 +18,15 @@ Route::get('/', function () {
 });
 
 Route::post('/send',function (Request $request){
+    //バリデーション
+    $validator = Validator::make($request->all(),['item_name' => 'required|max:255|min:3']);
 
+    //バリデーションエラー
+    if ($validator->false()){
+        return redirect('/')
+            ->withInput()
+            ->withErrors();
+    }
 });
 
 Route::delete('post/{post}',function (Post $post){
