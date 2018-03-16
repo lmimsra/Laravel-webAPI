@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 use app\Post;
 
 Route::get('/', function () {
-    return view('posts');
+    $posts = Post::orderBy('created_at', 'asc')->get();
+    return view('posts',['posts'=>$posts]);
 });
 
 Route::post('/send',function (Request $request){

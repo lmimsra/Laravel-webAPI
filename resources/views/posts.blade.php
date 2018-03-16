@@ -23,5 +23,33 @@
                 </div>
             </div>
         </form>
+
+        <!-- 現在の投稿を表示 -->
+        @if(count($posts) > 0)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    現在の投稿
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped task-table">
+                        <thead>
+                        <th>投稿一覧</th>
+                        <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+                        @foreach($posts as $post)
+                            <tr>
+                                <td class="table-text">
+                                    <div>{{$post->title}}</div>
+                                </td>
+                                <!-- 削除ボタン -->
+                                <td></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        @endif
     </div>
 @endsection
