@@ -27,6 +27,13 @@ Route::post('/send',function (Request $request){
             ->withInput()
             ->withErrors();
     }
+
+    //add post
+    $posts = new Post;
+    $posts->title = $request->item_name;
+    $posts->body = 'test';
+    $posts->save();
+    return redirect('/');
 });
 
 Route::delete('post/{post}',function (Post $post){
