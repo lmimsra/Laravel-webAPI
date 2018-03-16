@@ -5,7 +5,7 @@
         @include('common.errors')
 
         {{--登録フォーム--}}
-        <form action="{{url('posts')}}" method="post" class="form-horizontal">
+        <form action="{{url('send')}}" method="post" class="form-horizontal">
             {{csrf_field()}}
             {{--投稿のタイトル--}}
             <div class="form-group">

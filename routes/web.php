@@ -10,8 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Post;
 use Illuminate\Http\Request;
-use app\Post;
+
 
 Route::get('/', function () {
     $posts = Post::orderBy('created_at', 'asc')->get();
@@ -23,10 +25,10 @@ Route::post('/send',function (Request $request){
     $validator = Validator::make($request->all(),['item_name' => 'required|max:255|min:3']);
 
     //バリデーションエラー
-    if ($validator->false()){
+    if ($validator->fails()){
         return redirect('/')
             ->withInput()
-            ->withErrors();
+            ->withErrors($validator);
     }
 
     //add post
