@@ -42,6 +42,7 @@
                         <thead>
                         <th>タイトル</th>
                         <th>コメント</th>
+                        <th>更新日時</th>
                         <th> </th>
                         </thead>
                         <tbody>
@@ -52,6 +53,9 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{$post->body}}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{$post->updated_at->format('Y年m月d日 H時i分s秒')}}</div>
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
