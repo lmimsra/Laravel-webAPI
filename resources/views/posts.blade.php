@@ -9,9 +9,16 @@
             {{csrf_field()}}
             {{--投稿のタイトル--}}
             <div class="form-group">
-                <label for="post" class="col-sm-3 custom-control-label">Post</label>
+                <label for="post-name" class="col-sm-3 custom-control-label">Post</label>
                 <div class="col-sm-6">
-                    <input type="text" name="item_name" id="post-name" class="form-control">
+                    <input type="text" name="post_title" id="post-name" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="post-body" class="col-sm-3 custom-control-label">Comment</label>
+                <div class="col-sm-6">
+                    <input type="text" name="post_body" id="post-body" class="form-control">
                 </div>
             </div>
 
@@ -33,14 +40,18 @@
                 <div class="panel-body">
                     <table class="table table-striped task-table">
                         <thead>
-                        <th>投稿一覧</th>
-                        <th>&nbsp;</th>
+                        <th>タイトル</th>
+                        <th>コメント</th>
+                        <th> </th>
                         </thead>
                         <tbody>
                         @foreach($posts as $post)
                             <tr>
                                 <td class="table-text">
                                     <div>{{$post->title}}</div>
+                                </td>
+                                <td class="table-text">
+                                    <div>{{$post->body}}</div>
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>

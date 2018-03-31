@@ -22,7 +22,10 @@ Route::get('/', function () {
 
 Route::post('/send',function (Request $request){
     //バリデーション
-    $validator = Validator::make($request->all(),['item_name' => 'required|max:255|min:3']);
+    $validator = Validator::make($request->all(),[
+        'post_title' => 'required|max:255|min:3',
+        'post_body' => 'required|min:3'
+        ]);
 
     //バリデーションエラー
     if ($validator->fails()){
@@ -33,8 +36,8 @@ Route::post('/send',function (Request $request){
 
     //add post
     $posts = new Post;
-    $posts->title = $request->item_name;
-    $posts->body = 'test';
+    $posts->title = $request->post_title;
+    $posts->body = $request->post_body;
     $posts->save();
     return redirect('/');
 });
