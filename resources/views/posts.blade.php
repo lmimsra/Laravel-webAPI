@@ -43,7 +43,7 @@
                         <th>タイトル</th>
                         <th>コメント</th>
                         <th>更新日時</th>
-                        <th> </th>
+                        <th></th>
                         </thead>
                         <tbody>
                         @foreach($posts as $post)
