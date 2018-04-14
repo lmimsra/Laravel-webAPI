@@ -23,8 +23,8 @@ Route::get('/', function () {
 Route::post('/send',function (Request $request){
     //バリデーション
     $validator = Validator::make($request->all(),[
-        'post_title' => 'required|max:255|min:3',
-        'post_body' => 'required|min:3'
+        'post_title' => 'required|max:100|min:3',
+        'post_body' => 'required|min:3|max:255'
         ]);
 
     //バリデーションエラー
