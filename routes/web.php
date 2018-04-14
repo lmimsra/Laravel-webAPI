@@ -48,5 +48,9 @@ Route::delete('post/{post}',function (Post $post){
 
 });
 
+Route::post('editposts/{post}',function (Post $post){
+    return view('editpost',[post=>$post]);
+});
+
 //面白半分で書いた
 Route::get('welcome','WelcomeController@welcome');
