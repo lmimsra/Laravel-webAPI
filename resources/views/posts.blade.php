@@ -44,6 +44,7 @@
                         <th>コメント</th>
                         <th>更新日時</th>
                         <th></th>
+                        <th></th>
                         </thead>
                         <tbody>
                         @foreach($posts as $post)
@@ -56,6 +57,15 @@
                                 </td>
                                 <td class="table-text">
                                     <div>{{$post->updated_at->format('Y年m月d日 H時i分s秒')}}</div>
+                                </td>
+                                {{--編集ボタン--}}
+                                <td>
+                                    <form action="{{url('editpost/'.$post->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        <button type="submit" class="btn btn-light">
+                                            <i class="glyphicon glyphicon-edit"></i>編集
+                                        </button>
+                                    </form>
                                 </td>
                                 <!-- 削除ボタン -->
                                 <td>
