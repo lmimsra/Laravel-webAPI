@@ -60,3 +60,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## Main function
+Add  
+Remove  
+Update  
